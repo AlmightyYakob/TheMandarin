@@ -7,11 +7,11 @@ import tweepy, time, sys
 from tweepy.models import Status
 
 
-                                    #enter the corresponding information from your Twitter application:
-CONSUMER_KEY = 'prjiNXa8WHL5IOS4HNdnqxQRL'        #keep the quotes, replace this with your consumer key
-CONSUMER_SECRET = 'hHQ2OJeI26tpHhooihfBvwZ6jNXrlME3DCOKsoaFPKHnaHVhZt'     #keep the quotes, replace this with your consumer secret key
-ACCESS_KEY = '837807691414274051-WMs9arq1V4SHo4mXWgG6YLaDhNbyyKM'          #keep the quotes, replace this with your access token
-ACCESS_SECRET = 'Cm8aWMQSQVEtlzR8nEXYEBZl2vtS6O4mj0dXdz0yQNyzV'          #keep the quotes, replace this with your access token secret
+CONSUMER_KEY = 'prjiNXa8WHL5IOS4HNdnqxQRL'
+CONSUMER_SECRET = 'hHQ2OJeI26tpHhooihfBvwZ6jNXrlME3DCOKsoaFPKHnaHVhZt'
+ACCESS_KEY = '837807691414274051-WMs9arq1V4SHo4mXWgG6YLaDhNbyyKM'
+ACCESS_SECRET = 'Cm8aWMQSQVEtlzR8nEXYEBZl2vtS6O4mj0dXdz0yQNyzV'
+
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
