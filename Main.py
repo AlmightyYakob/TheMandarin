@@ -24,19 +24,9 @@ api = twitter.Api(consumer_key=CONSUMER_KEY,
                   access_token_secret=ACCESS_SECRET)
 
 
-
-
-
-
-printTweets(getTweetsFromUser(api, USER_ID, 10, 0, 200), OUTPUT_FILE)
-
-#oldestTweet = 0
-
-#for i in range(0, 16):
-#    statuses = api.GetUserTimeline(user_id=USER_ID, max_id=oldestTweet, count=200)
-#    printTweets(statuses, storeFileName)
-#    oldest_tweet = (statuses[len(statuses)-1]).id
-
+statuses = getTweetsFromUser(api, USER_ID, 20, 0, 200)
+printTweets(statuses, True, OUTPUT_FILE)
+print(len(statuses))
 
 
 exit()
