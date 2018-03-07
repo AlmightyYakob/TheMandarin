@@ -32,13 +32,13 @@ def printTweets(statuses):
     for i in statuses:
         print(i.text)
 
-statuses = api.GetUserTimeline(screen_name="SamLuyk")
+statuses = api.GetUserTimeline(screen_name="SamLuyk", count=200)
 printTweets(statuses)
 
 print("\n-----------------------\n")
 oldest_tweet = (statuses[len(statuses)-1]).id
 
-statuses = api.GetUserTimeline(screen_name="SamLuyk", max_id=oldest_tweet)
+statuses = api.GetUserTimeline(screen_name="SamLuyk", max_id=oldest_tweet, count=200)
 printTweets(statuses)
 
 exit()
