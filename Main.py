@@ -16,6 +16,7 @@ ACCESS_SECRET = 'Cm8aWMQSQVEtlzR8nEXYEBZl2vtS6O4mj0dXdz0yQNyzV'
 
 SCREEN_NAME = "SamLuyk"
 USER_ID = 767730307
+OUTPUT_FILE = "output.txt"
 
 api = twitter.Api(consumer_key=CONSUMER_KEY,
                   consumer_secret=CONSUMER_SECRET,
@@ -24,13 +25,19 @@ api = twitter.Api(consumer_key=CONSUMER_KEY,
 
 
 
-storeFileName = "output.txt"
-oldestTweet = 0
 
-for i in range(0, 16):
-    statuses = api.GetUserTimeline(user_id=USER_ID, max_id=oldestTweet, count=200)
-    printTweets(statuses, storeFileName)
-    oldest_tweet = (statuses[len(statuses)-1]).id
+
+
+printTweets(getTweetsFromUser(api, USER_ID, 10, 0, 200), OUTPUT_FILE)
+
+#oldestTweet = 0
+
+#for i in range(0, 16):
+#    statuses = api.GetUserTimeline(user_id=USER_ID, max_id=oldestTweet, count=200)
+#    printTweets(statuses, storeFileName)
+#    oldest_tweet = (statuses[len(statuses)-1]).id
+
+
 
 exit()
 

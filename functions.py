@@ -10,3 +10,15 @@ def printTweets(statuses, fileName=None):
             file1.write(i.text.encode("utf-8"))
 
 
+
+def getTweetsFromUser(api, userID, numOfCalls, startingID, countPerCall=200):
+    statuses = []
+    oldestTweet = startingID
+    countPerCall = min(200, countPerCall)
+
+    for i in range(0, numOfCalls):
+        statuses.extend(api.GetUserTimeline(user_id=userID, max_id=oldestTweet, count=countPerCall))
+        oldestTweet = (statuses[len(statuses)-1]).id
+
+
+    return statuses
