@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
+from functions import *
 import math
-
 import time, sys
 import twitter
 import urllib3
@@ -24,19 +24,13 @@ api = twitter.Api(consumer_key=CONSUMER_KEY,
 
 
 
+storeFileName = "output.txt"
+oldestTweet = 0
 
-def printTweets(statuses):
-    for i in statuses:
-        print(i.text)
-
-statuses = api.GetUserTimeline(user_id=USER_ID, count=200)
-printTweets(statuses)
-
-print("\n-----------------------\n")
-oldest_tweet = (statuses[len(statuses)-1]).id
-
-statuses = api.GetUserTimeline(user_id=USER_ID, max_id=oldest_tweet, count=200)
-printTweets(statuses)
+for i in range(0, 16):
+    statuses = api.GetUserTimeline(user_id=USER_ID, max_id=oldestTweet, count=200)
+    printTweets(statuses, storeFileName)
+    oldest_tweet = (statuses[len(statuses)-1]).id
 
 exit()
 
