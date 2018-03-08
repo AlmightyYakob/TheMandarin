@@ -1,6 +1,8 @@
 source ~/.bashrc
 
-#luarocks install torch
+./installTorch.sh
+
+luarocks install torch
 luarocks install nn
 luarocks install optim
 luarocks install lua-cjson
