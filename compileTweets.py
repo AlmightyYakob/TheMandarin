@@ -10,13 +10,17 @@ import urllib3
 
 urllib3.disable_warnings()
 
-SCREEN_NAME = "SamLuyk"
-USER_ID = 767730307
+#SCREEN_NAME = "SamLuyk"
+#SCREEN_NAME = "_The_Mandarin_"
+#USER_ID = 767730307
+#USER_ID = 837807691414274051
+
 OUTPUT_FILE = "output.txt"
 
 api = getAPI()
 
-statuses = getTweetsFromUser(api, USER_ID, 20, 0, 200)
+statuses = getTweetsFromTimeline(api, 2)
+
 printTweets(statuses, True, OUTPUT_FILE)
 print(len(statuses))
 

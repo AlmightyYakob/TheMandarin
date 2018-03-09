@@ -10,9 +10,5 @@ api = twitter.Api(consumer_key=CONSUMER_KEY,
                   access_token_key=ACCESS_KEY,
                   access_token_secret=ACCESS_SECRET)
 
-
-
-
-
 def getAPI():
     return api

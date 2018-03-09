@@ -21,6 +21,18 @@ def printTweets(statuses, includeDatesToConsole=False, fileName=None):
         file1.close()
 
 
+def getTweetsFromTimeline(api, numOfCalls=1, startingID=None, countPerCall=200):
+    statuses = []
+    oldestTweet = startingID
+
+    countPerCall = min(200, countPerCall)    #limits count per call to 200
+    numOfCalls = min(180, numOfCalls)        #limits number of calls to 180
+
+    for i in range(0, numOfCalls):
+        statuses.extend(api.GetHomeTimeline(count=countPerCall, max_id=oldestTweet))
+        oldestTweet = (statuses[len(statuses)-1]).id
+
+    return statuses
 
 def getTweetsFromUser(api, userID, numOfCalls=1, startingID=None, countPerCall=200):
     statuses = []
