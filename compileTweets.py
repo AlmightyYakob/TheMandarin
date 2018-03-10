@@ -17,7 +17,7 @@ urllib3.disable_warnings()
 
 
 
-def compileTweets(api=getAPI(), outputFile=None):
+def compileTweets(api=getAPI(), outputFile=None, num=800):
     if (outputFile==None):
         OUTPUT_FILE = "RETRIEVED_TWEETS.txt"
     else:
