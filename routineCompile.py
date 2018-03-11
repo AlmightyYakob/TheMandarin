@@ -1,6 +1,5 @@
 from functions import *
 from Main import *
-from compileTweets import *
 import time, sys
 import glob
 import os
@@ -15,8 +14,6 @@ while(True):
 
     commandString = "./preProcess.sh " + DATA_FILE_NAME
     subprocess.call(commandString, shell=True)
-
-
 
     print("---- Completed at " + str(datetime.datetime.now()))
     time.sleep(SECONDS_TO_SLEEP)

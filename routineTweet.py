@@ -5,7 +5,7 @@ import glob
 import os
 import subprocess
 
-SECONDS_TO_SLEEP = 60
+SECONDS_TO_SLEEP = 300
 
 SAMPLE_FILE_NAME = "/home/jake/twitterBot/SAMPLE.txt"
 
@@ -26,8 +26,8 @@ while(True):
         print("Tweet Posted!")
         print("Sleeping for " + str(SECONDS_TO_SLEEP) + " seconds.")
         time.sleep(SECONDS_TO_SLEEP)
-    except:
+    except Exception as e:
+        print(e)
         print("Posting Tweet failed! Continuing...")
-
     fr.close()
 

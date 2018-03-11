@@ -8,8 +8,6 @@ import subprocess
 SECONDS_TO_SLEEP = 60
 
 while(True):
-    #compileTweets
-
     list_of_files = glob.glob('/home/jake/twitterBot/torch-rnn/cv/*.t7')
     latest_file = max(list_of_files, key=os.path.getctime)
     print latest_file
