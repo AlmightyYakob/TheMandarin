@@ -9,8 +9,13 @@ import re
 
 def cleanString(string):
     string = re.sub(r'http\S+', '', string)
-    string = re.sub(r'@\S+', '', string)
     string = re.sub(r'RT ', '', string)
+    string = re.sub(r'@\S+', '', string)
+    string = re.sub(r'#\S+', '', string)
+    string = re.sub(r'&amp;', '&', string)
+    string = re.sub(r'\s.\s', ' ', string)
+    string = re.sub(r'  ', ' ', string)
+
     return string
 
     #return re.sub(r'^https?:\/\/.*[\r\n]*', '', string)

@@ -16,6 +16,8 @@ fw = open(NEW_FILE_NAME, "w")
 
 for line in fr:
     line = cleanString(line)
+    if (line[0] == ' '):
+        line = line[1:]
     line = unicode(line, "utf-8")
     fw.write(line.encode("utf-8"))
 
