@@ -1,5 +1,5 @@
 from functions import *
-from Main import *
+from main import *
 import time, sys
 import glob
 import os

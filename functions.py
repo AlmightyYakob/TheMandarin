@@ -1,5 +1,5 @@
 from functions import *
-from Main import *
+from main import *
 import math
 import time, sys
 #import twitter
