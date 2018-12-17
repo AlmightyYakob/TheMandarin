@@ -1,8 +1,8 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, LTSM, CuDNNLTSM
+from tensorflow.keras.layers import Dense, Dropout, LSTM, CuDNNLSTM
 from tensorflow.keras.callbacks import ModelCheckpoint
-from tensorflow.keras.utils import np_utils
+from keras.utils import np_utils
 import numpy as np
 
 SEQ_LENGTH = 100
