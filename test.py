@@ -1,18 +1,12 @@
 from tensorflow.keras.models import load_model
 import numpy as np
-from network import test
+from network import test, getBestCheckpoint
 import os
 import re
 import numpy as np
 
 def main():
-    baseFileString = 'weights-improvement-'
-    files = os.listdir('./')
-    fileRegex = re.compile(baseFileString + '(\d+-([\d\.]+))\.hdf5')
-
-    matches = [fileRegex.match(x) for x in files]
-    matches = [x for x in matches if x != None]
-    minLoss = matches[np.argmin([x.group(2) for x in matches])].group()
+    minLoss = getBestCheckpoint()
     print(test(minLoss, 200))
 
 
