@@ -1,4 +1,5 @@
-from main import TWITTER_ID, getAPI
+from constants import TWITTER_ID
+from api import getAPI
 import re
 
 

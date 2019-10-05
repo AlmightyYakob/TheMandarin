@@ -8,8 +8,10 @@ flake8 = "*"
 black = "*"
 
 [packages]
+keras = "*"
 twitter = "*"
 urllib3 = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.6"

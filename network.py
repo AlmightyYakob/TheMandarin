@@ -1,13 +1,11 @@
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, LSTM, CuDNNLSTM
-from tensorflow.keras.callbacks import ModelCheckpoint
-from tensorflow.keras.models import load_model
+from keras.models import Sequential, load_model
+from keras.layers import Dense, Dropout, LSTM
+from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 import numpy as np
 
+from constants import INPUT_TEXT_SEQ_LENGTH as SEQ_LENGTH
 
-SEQ_LENGTH = 100
 
 raw_text = open("shakespeare-julius-26.txt").read().lower()
 
@@ -47,10 +45,10 @@ def getBestCheckpoint():
 
     baseFileString = "weights-improvement-"
     files = os.listdir("./")
-    fileRegex = re.compile(baseFileString + "(\d+-([\d\.]+))\.hdf5")
+    fileRegex = re.compile(baseFileString + "(\\d+-([\\d\\.]+))\\.hdf5")
 
     matches = [fileRegex.match(x) for x in files]
-    matches = [x for x in matches if x != None]
+    matches = [x for x in matches if x is not None]
     minLoss = matches[np.argmin([x.group(2) for x in matches])].group()
     return minLoss
 

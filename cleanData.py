@@ -1,30 +1,20 @@
-from functions import *
-from main import *
-import time, sys
-import glob
-import os
-import subprocess
+from functions import cleanString
+from constants import RETRIEVED_TWEETS_FILE, FIXED_TWEETS_FILE
 
-FILE_NAME = "/home/jake/twitterBot/RETRIEVED_TWEETS.txt"
-NEW_FILE_NAME = "/home/jake/twitterBot/FIXED_RETRIEVED_TWEETS.txt"
+fr = open(RETRIEVED_TWEETS_FILE, "r")
+fw = open(FIXED_TWEETS_FILE, "w")
 
-fr = open(FILE_NAME, "r")
-fw = open(NEW_FILE_NAME, "w")
-
-# status = unicode(fr.read(), "utf-8")
-
+status = str(fr.read())
 
 for line in fr:
     line = cleanString(line)
     if line[0] == " ":
         line = line[1:]
-    line = unicode(line, "utf-8")
+    line = str(line, "utf-8")
     fw.write(line.encode("utf-8"))
 
 fr.close()
 fw.close()
-
-exit()
 
 status = cleanString(status)
 print(status)
