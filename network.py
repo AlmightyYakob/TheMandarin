@@ -81,7 +81,6 @@ def test(filepath=getBestCheckpoint(), LENGTH=500):
     pattern = dataX[startIndex]
     output = "".join([int_to_char[v] for v in pattern])
 
-    testlist = []
     for i in range(LENGTH):
         print("Round", i)
         x = np.reshape(pattern, (1, len(pattern), 1))
