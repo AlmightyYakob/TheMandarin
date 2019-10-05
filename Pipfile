@@ -4,11 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
-autopep8 = "*"
+flake8 = "*"
+black = "*"
 
 [packages]
-tensorflow = "*"
+twitter = "*"
+urllib3 = "*"
 
 [requires]
 python_version = "3.6"
