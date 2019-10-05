@@ -14,5 +14,8 @@
 The goal of this bot is to use twitter to injest data to train a recurrent neural network, generating realistic/comical text/tweets.
 
 ## Requirements
-* Python
+* Pipenv
 * Tensorflow
+
+## To Do
+* Switch twitter package to tweepy
