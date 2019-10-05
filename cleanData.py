@@ -11,12 +11,12 @@ NEW_FILE_NAME = "/home/jake/twitterBot/FIXED_RETRIEVED_TWEETS.txt"
 fr = open(FILE_NAME, "r")
 fw = open(NEW_FILE_NAME, "w")
 
-#status = unicode(fr.read(), "utf-8")
+# status = unicode(fr.read(), "utf-8")
 
 
 for line in fr:
     line = cleanString(line)
-    if (line[0] == ' '):
+    if line[0] == " ":
         line = line[1:]
     line = unicode(line, "utf-8")
     fw.write(line.encode("utf-8"))
@@ -31,4 +31,3 @@ print(status)
 
 fr.write(status.encode("utf-8"))
 fr.close()
-
