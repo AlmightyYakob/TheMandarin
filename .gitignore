@@ -1,5 +1,8 @@
 *.pyc
 __pycache__
 
+# Text files
 *.txt
 
+# Purposefully ignored
+*.local
