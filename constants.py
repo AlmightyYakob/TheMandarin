@@ -1,15 +1,29 @@
-from os import getenv
+import os
+from dotenv import load_dotenv
 
-CONSUMER_KEY = getenv("CONSUMER_KEY")
-CONSUMER_SECRET = getenv("CONSUMER_SECRET")
-ACCESS_KEY = getenv("ACCESS_KEY")
-ACCESS_SECRET = getenv("ACCESS_SECRET")
+LOCAL_DOTENV_PATH = ".env.local"
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-TWITTER_ID = getenv("TWITTER_ID")
 
-RETRIEVED_TWEETS_FILE = getenv("RETRIEVED_TWEETS_FILE")
-FIXED_TWEETS_FILE = getenv("FIXED_TWEETS_FILE")
+if os.path.exists(LOCAL_DOTENV_PATH):
+    load_dotenv(LOCAL_DOTENV_PATH, override=True, verbose=True)
 
-INPUT_TEXT_SEQ_LENGTH = int(getenv("INPUT_TEXT_SEQ_LENGTH"))
 
-TWEET_INTERVAL_SECONDS = getenv("TWEET_INTERVAL_SECONDS")
+# Grab environment variables
+
+CONSUMER_KEY = os.getenv("CONSUMER_KEY")
+CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
+ACCESS_KEY = os.getenv("ACCESS_KEY")
+ACCESS_SECRET = os.getenv("ACCESS_SECRET")
+
+TWITTER_ID = os.getenv("TWITTER_ID")
+
+RETRIEVED_TWEETS_FILE = os.getenv("RETRIEVED_TWEETS_FILE")
+FIXED_TWEETS_FILE = os.getenv("FIXED_TWEETS_FILE")
+
+INPUT_TEXT_SEQ_LENGTH = int(os.getenv("INPUT_TEXT_SEQ_LENGTH"))
+
+TWEET_INTERVAL_SECONDS = int(os.getenv("TWEET_INTERVAL_SECONDS"))
+
+DEFAULT_TRAINING_EPOCHS = int(os.getenv("DEFAULT_TRAINING_EPOCHS"))
+DEFAULT_TRAINING_BATCH_SIZE = int(os.getenv("DEFAULT_TRAINING_BATCH_SIZE"))
