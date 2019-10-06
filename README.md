@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/AlmightyYakob/TheMandarin" title="The Mandarin">
-    <img alt="The Mandarin" src="https://image.flaticon.com/icons/svg/123/123228.svg" width="200px" height="200px" />
+    <img alt="The Mandarin" src="https://github.com/AlmightyYakob/TheMandarin/blob/v2/icon.svg" width="200px" height="200px" />
   </a>
   <br />
   The Mandarin
