@@ -1,4 +1,4 @@
-from functions import cleanString
+from utils import cleanString
 from constants import RETRIEVED_TWEETS_FILE, FIXED_TWEETS_FILE
 
 fr = open(RETRIEVED_TWEETS_FILE, "r")
