@@ -1,11 +1,12 @@
-import twitter
+from twitter import Twitter, OAuth
 from constants import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
 
 def getAPI():
-    return twitter.Api(
+    auth = OAuth(
+        token=ACCESS_KEY,
+        token_secret=ACCESS_SECRET,
         consumer_key=CONSUMER_KEY,
         consumer_secret=CONSUMER_SECRET,
-        access_token_key=ACCESS_KEY,
-        access_token_secret=ACCESS_SECRET,
     )
+    return Twitter(auth=auth)
