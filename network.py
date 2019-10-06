@@ -1,7 +1,8 @@
 from keras.models import Sequential, load_model
-from keras.layers import Dense, Dropout, LSTM
+from keras.layers import Dense, Dropout, LSTM, CuDNNLSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
+from keras.backend.tensorflow_backend import _get_available_gpus
 import numpy as np
 
 from constants import INPUT_TEXT_SEQ_LENGTH as SEQ_LENGTH
@@ -42,7 +43,12 @@ def sigmoid(x):
 def get_model():
     # Consider making input just single character
     model = Sequential()
-    model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
+
+    if _get_available_gpus():
+        model.add(CuDNNLSTM(256, input_shape=(X.shape[1], X.shape[2])))
+    else:
+        model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
+
     model.add(Dropout(0.2))
     model.add(Dense(y.shape[1], activation="softmax"))
     model.compile(loss="categorical_crossentropy", optimizer="adam")
